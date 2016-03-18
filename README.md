@@ -1,5 +1,5 @@
 # github-battle
-  Simple React app using React, Webpack and ES6
+  Simple React app using React,React Router, Webpack and ES6
 
 ###Getting Started###
 
