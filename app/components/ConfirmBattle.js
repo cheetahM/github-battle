@@ -1,6 +1,6 @@
 var React = require('react');
-var Proptypes = React.Proptypes;
-var transparentBg = require('../styles').transparentBg;
+var PropTypes = React.PropTypes;
+var styles = require('../styles');
 
 function puke (object) {
   return <pre>{JSON.stringify(object , null, ' ')}</pre>
@@ -14,13 +14,15 @@ function ConfirmBattle (props) {
         <div className='col-sm-8 col-sm-offset-2'>
           <div className='col-sm-6'>
             <p className='lead'>
-              {puke(props.playersInfo[0])}
+              Player 1
             </p>
+            {puke(props.playersInfo[0])}
           </div>
           <div className='col-sm-6'>
             <p className='lead'>
-              {puke(props.playersInfo[1])}
+              Player 2
             </p>
+            {puke(props.playersInfo[1])}
           </div>
         </div>
         <div className='col-sm-8 col-sm-offset-2'>
@@ -34,10 +36,10 @@ function ConfirmBattle (props) {
       </div>
 }
 
-ConfirmBattle.Proptypes = {
-  isLoading: Proptypes.bool.isRequired,
-  onInitiateBattle: Proptypes.func.isRequired,
-  playersInfo: Proptypes.array.isRequired
+ConfirmBattle.PropTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  onInitiateBattle: PropTypes.func.isRequired,
+  playersInfo: PropTypes.array.isRequired
 }
 
 module.exports = ConfirmBattle;
