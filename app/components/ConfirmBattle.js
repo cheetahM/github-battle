@@ -2,6 +2,7 @@ var React = require('react');
 var PropTypes = React.PropTypes;
 var styles = require('../styles');
 var Link = require('react-router').Link;
+var UserDetails = require('./UserDetails');
 
 function puke (object) {
   return <pre>{JSON.stringify(object , null, ' ')}</pre>
@@ -18,6 +19,7 @@ function ConfirmBattle (props) {
               Player 1
             </p>
             {puke(props.playersInfo[0])}
+            <UserDetails info={props.playersInfo[0]} />
           </div>
           <div className='col-sm-6'>
             <p className='lead'>
@@ -41,7 +43,7 @@ function ConfirmBattle (props) {
       </div>
 }
 
-ConfirmBattle.PropTypes = {
+ConfirmBattle.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   onInitiateBattle: PropTypes.func.isRequired,
   playersInfo: PropTypes.array.isRequired
