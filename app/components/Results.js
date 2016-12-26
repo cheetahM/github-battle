@@ -5,6 +5,7 @@ var UserDetails = require('../components/UserDetails');
 var UserDetailsWrapper = require('../components/UserDetailsWrapper');
 var Link = require('react-router').Link;
 var MainContainer = require('./MainContainer');
+var Loading = require('./Loading');
 
 function StartOver() {
   return(
@@ -19,7 +20,9 @@ function StartOver() {
 function Results(props) {
   if(props.isLoading === true) {
     return (
-      <p> Loading...</p>
+      <Loading
+        text='Waiting'
+        speed={800} />
     )
   }
   if(props.scores[0] === props.scores[1]) {
@@ -51,7 +54,7 @@ function Results(props) {
 Results.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   scores: PropTypes.array.isRequired,
-  getPlayersInfo: PropTypes.array.isRequired
+  playersInfo: PropTypes.array.isRequired
 }
 
 module.exports = Results;
